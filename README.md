@@ -410,7 +410,8 @@ It is not currently deployed in production clinical environments.
 
 Backend Engineering • AI Systems • Voice Infrastructure
 
-📧 [yourmail@gmail.com](mailto:yourmail@gmail.com)
+📧 [nailashalman001@gmail.com](mailto:nailashalman001@gmail.com)
+
 
 ---
 
