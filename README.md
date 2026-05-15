@@ -27,17 +27,137 @@ The system architecture is modular, service-oriented, and designed for scalable 
 # AI Voice Workflow Architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
 
-A[Patient Call] --> B[Twilio Voice Gateway]
-B --> C[Deepgram Speech-to-Text]
-C --> D[Groq LLM Orchestrator]
-D --> E[Intent Extraction Engine]
-E --> F[Redis Session Memory]
-F --> G[Clinic Workflow Engine]
-G --> H[ElevenLabs Text-to-Speech]
-H --> I[Patient Voice Response]
+%% =========================
+%% CLIENT LAYER
+%% =========================
+
+subgraph CLIENT["Patient Communication Layer"]
+
+A[Patient Voice Call]
+B[Clinic Operations Dashboard]
+
+end
+
+%% =========================
+%% TELEPHONY
+%% =========================
+
+subgraph TELEPHONY["Telephony & Audio Gateway"]
+
+C[Twilio Voice Gateway]
+D[Streaming Audio Pipeline]
+
+end
+
+%% =========================
+%% SPEECH PROCESSING
+%% =========================
+
+subgraph SPEECH["Speech Processing Layer"]
+
+E[Deepgram Speech-to-Text]
+F[Multilingual Transcript Engine]
+
+end
+
+%% =========================
+%% AI ORCHESTRATION
+%% =========================
+
+subgraph AI["Conversational AI Orchestration"]
+
+G[Groq LLM]
+H[Intent Extraction Engine]
+I[Conversation Router]
+J[Workflow Decision Engine]
+
+end
+
+%% =========================
+%% MEMORY
+%% =========================
+
+subgraph MEMORY["Session & Context Infrastructure"]
+
+K[Redis Session Memory]
+L[Conversation Context Store]
+
+end
+
+%% =========================
+%% HEALTHCARE SERVICES
+%% =========================
+
+subgraph SERVICES["Healthcare Workflow Services"]
+
+M[Doctor Availability Service]
+N[Appointment Scheduling Engine]
+O[Patient Query Processing]
+
+end
+
+%% =========================
+%% RESPONSE PIPELINE
+%% =========================
+
+subgraph RESPONSE["Voice Response Pipeline"]
+
+P[ElevenLabs Text-to-Speech]
+Q[AI Voice Response Generator]
+
+end
+
+%% =========================
+%% FLOW CONNECTIONS
+%% =========================
+
+A --> C
+C --> D
+D --> E
+E --> F
+F --> G
+
+G --> H
+H --> I
+I --> J
+
+J --> K
+K --> L
+
+J --> M
+J --> N
+J --> O
+
+M --> P
+N --> P
+O --> P
+
+P --> Q
+Q --> A
+
+%% =========================
+%% DASHBOARD CONNECTIONS
+%% =========================
+
+B --> J
+B --> K
+B --> N
+
+%% =========================
+%% STYLING
+%% =========================
+
+style CLIENT fill:#0f172a,stroke:#60a5fa,color:#ffffff
+style TELEPHONY fill:#1e293b,stroke:#38bdf8,color:#ffffff
+style SPEECH fill:#0f766e,stroke:#5eead4,color:#ffffff
+style AI fill:#1e3a8a,stroke:#93c5fd,color:#ffffff
+style MEMORY fill:#312e81,stroke:#a5b4fc,color:#ffffff
+style SERVICES fill:#581c87,stroke:#d8b4fe,color:#ffffff
+style RESPONSE fill:#7c2d12,stroke:#fdba74,color:#ffffff
 ```
+
 
 ---
 
