@@ -7,6 +7,9 @@ Clinivo AI is a multilingual AI-powered healthcare communication platform design
 The platform combines telephony, speech recognition, conversational AI orchestration, distributed session management, and voice synthesis into a unified healthcare voice workflow system.
 
 ---
+## Live Frontend Demo
+
+https://clinivo-ai.vercel.app/
 
 # Platform Overview
 
